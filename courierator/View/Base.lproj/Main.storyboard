@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calculator View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CalculatorViewController" customModule="courierator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="5KE-qa-7vA">
+                                <rect key="frame" x="15" y="247" width="384" height="327"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiT-GN-BkL" userLabel="Часы">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="timeAmountSlider" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="bhf-vD-MSQ" userLabel="Кол-во часов">
+                                                <rect key="frame" x="18" y="96" width="348" height="31"/>
+                                                <color key="tintColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="touchSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="2ge-sm-lbz"/>
+                                                </connections>
+                                            </slider>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lCi-UJ-90g">
+                                                <rect key="frame" x="185.5" y="56" width="13" height="24"/>
+                                                <color key="textColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество часов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejZ-fu-Uh3">
+                                                <rect key="frame" x="109" y="16" width="166.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bhf-vD-MSQ" secondAttribute="trailing" constant="20" id="4qC-8w-LM8"/>
+                                            <constraint firstItem="lCi-UJ-90g" firstAttribute="centerX" secondItem="bhf-vD-MSQ" secondAttribute="centerX" id="EV1-pG-UnM"/>
+                                            <constraint firstItem="lCi-UJ-90g" firstAttribute="top" secondItem="ejZ-fu-Uh3" secondAttribute="bottom" constant="16" id="Vdk-8k-VKM"/>
+                                            <constraint firstItem="ejZ-fu-Uh3" firstAttribute="top" secondItem="GiT-GN-BkL" secondAttribute="top" constant="16" id="aBy-dw-FFQ"/>
+                                            <constraint firstItem="bhf-vD-MSQ" firstAttribute="leading" secondItem="GiT-GN-BkL" secondAttribute="leading" constant="20" id="d4u-tt-owO"/>
+                                            <constraint firstItem="bhf-vD-MSQ" firstAttribute="top" secondItem="lCi-UJ-90g" secondAttribute="bottom" constant="16" id="oH8-2m-iHT"/>
+                                            <constraint firstItem="ejZ-fu-Uh3" firstAttribute="centerX" secondItem="bhf-vD-MSQ" secondAttribute="centerX" id="rHI-jH-lgw"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zon-dY-bc3" userLabel="Чеки">
+                                        <rect key="frame" x="0.0" y="177" width="384" height="150"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="deliAmountSlider" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="W99-m9-brG" userLabel="Кол-во чеков">
+                                                <rect key="frame" x="18" y="96" width="348" height="31"/>
+                                                <color key="tintColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="touchSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="okK-km-M2b"/>
+                                                </connections>
+                                            </slider>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhU-CE-SRK">
+                                                <rect key="frame" x="181.5" y="56" width="21" height="24"/>
+                                                <color key="textColor" red="0.84313725490196079" green="0.2196078431372549" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество чеков" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-w2-G7E">
+                                                <rect key="frame" x="109" y="16" width="166" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="0.84313725490196079" green="0.2196078431372549" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="W99-m9-brG" firstAttribute="leading" secondItem="zon-dY-bc3" secondAttribute="leading" constant="20" id="5vr-wV-leO"/>
+                                            <constraint firstItem="QhU-CE-SRK" firstAttribute="top" secondItem="cvh-w2-G7E" secondAttribute="bottom" constant="16" id="7El-g0-Dme"/>
+                                            <constraint firstItem="cvh-w2-G7E" firstAttribute="centerX" secondItem="W99-m9-brG" secondAttribute="centerX" id="Lig-QW-nXT"/>
+                                            <constraint firstItem="cvh-w2-G7E" firstAttribute="top" secondItem="zon-dY-bc3" secondAttribute="top" constant="16" id="aNs-cm-JV0"/>
+                                            <constraint firstItem="QhU-CE-SRK" firstAttribute="centerX" secondItem="W99-m9-brG" secondAttribute="centerX" id="caP-pa-oEs"/>
+                                            <constraint firstItem="W99-m9-brG" firstAttribute="top" secondItem="QhU-CE-SRK" secondAttribute="bottom" constant="16" id="csX-ah-4g2"/>
+                                            <constraint firstAttribute="trailing" secondItem="W99-m9-brG" secondAttribute="trailing" constant="20" id="zjg-Tn-H8X"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zon-dY-bc3" firstAttribute="top" secondItem="5KE-qa-7vA" secondAttribute="top" constant="177" id="wSR-Tw-Xe0"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjg-xs-OX4" userLabel="Стоимость">
+                                <rect key="frame" x="15" y="84" width="384" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стоимость часа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTc-CI-0JL">
+                                        <rect key="frame" x="30" y="30" width="169" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.84313725490196079" green="0.2196078431372549" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="70" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pN0-Jy-wyo" userLabel="Час">
+                                        <rect key="frame" x="301.5" y="30" width="52.5" height="34"/>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.93725490196078431" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="60" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cP6-N6-N5u" userLabel="Чек">
+                                        <rect key="frame" x="301.5" y="76" width="52.5" height="34"/>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.93725490196078431" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стоимость чека" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rva-mY-cF7">
+                                        <rect key="frame" x="30" y="76" width="147" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.84313725490196079" green="0.2196078431372549" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Rva-mY-cF7" firstAttribute="leading" secondItem="Qjg-xs-OX4" secondAttribute="leading" constant="30" id="1Q0-fP-pbU"/>
+                                    <constraint firstAttribute="trailing" secondItem="pN0-Jy-wyo" secondAttribute="trailing" constant="30" id="E3R-He-E2f"/>
+                                    <constraint firstItem="pN0-Jy-wyo" firstAttribute="top" secondItem="Qjg-xs-OX4" secondAttribute="top" constant="30" id="GKw-Wi-P2y"/>
+                                    <constraint firstAttribute="bottom" secondItem="cP6-N6-N5u" secondAttribute="bottom" constant="30" id="YBp-YB-RUT"/>
+                                    <constraint firstItem="Rva-mY-cF7" firstAttribute="centerX" secondItem="jTc-CI-0JL" secondAttribute="centerX" constant="-11" id="hPS-WW-86v"/>
+                                    <constraint firstItem="jTc-CI-0JL" firstAttribute="top" secondItem="Qjg-xs-OX4" secondAttribute="top" constant="30" id="jhI-j5-TIZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rva-mY-cF7" secondAttribute="bottom" constant="30" id="kj2-Qv-Ou6"/>
+                                    <constraint firstAttribute="trailing" secondItem="cP6-N6-N5u" secondAttribute="trailing" constant="30" id="pr4-fz-qP2"/>
+                                    <constraint firstItem="cP6-N6-N5u" firstAttribute="centerX" secondItem="pN0-Jy-wyo" secondAttribute="centerX" id="qDi-ft-INk"/>
+                                    <constraint firstItem="jTc-CI-0JL" firstAttribute="leading" secondItem="Qjg-xs-OX4" secondAttribute="leading" constant="30" id="tQ5-qq-zEY"/>
+                                    <constraint firstItem="Rva-mY-cF7" firstAttribute="top" secondItem="cP6-N6-N5u" secondAttribute="top" id="xtJ-Ku-3KH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0V-yk-MpQ">
+                                <rect key="frame" x="125" y="745" width="164" height="55"/>
+                                <color key="backgroundColor" red="0.074509803921568626" green="0.15294117647058825" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Z0U-f9-gtr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="ПОСЧИТАТЬ">
+                                    <color key="titleColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2v-4v-8d1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="0.8371309447014057" blue="0.71556746279827976" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5KE-qa-7vA" firstAttribute="top" secondItem="Qjg-xs-OX4" secondAttribute="bottom" constant="23" id="37T-he-A55"/>
+                            <constraint firstItem="s0V-yk-MpQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="67k-MP-Oar"/>
+                            <constraint firstItem="Qjg-xs-OX4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Ebc-LH-m3k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5KE-qa-7vA" secondAttribute="bottom" constant="288" id="Fqy-SG-9W9"/>
+                            <constraint firstItem="s0V-yk-MpQ" firstAttribute="centerX" secondItem="5KE-qa-7vA" secondAttribute="centerX" id="P9Z-SY-3z0"/>
+                            <constraint firstItem="5KE-qa-7vA" firstAttribute="leading" secondItem="Qjg-xs-OX4" secondAttribute="leading" id="XLH-Yn-uru"/>
+                            <constraint firstItem="5KE-qa-7vA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ble-Xd-HMK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s0V-yk-MpQ" secondAttribute="bottom" constant="62" id="dwk-qN-ben"/>
+                            <constraint firstItem="5KE-qa-7vA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q9t-ai-ZIg"/>
+                            <constraint firstItem="5KE-qa-7vA" firstAttribute="centerX" secondItem="Qjg-xs-OX4" secondAttribute="centerX" id="sD8-c1-HEy"/>
+                            <constraint firstItem="5KE-qa-7vA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="247" id="tZh-wW-WSp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deliAmountSlider" destination="W99-m9-brG" id="7YD-1z-BSa"/>
+                        <outlet property="deliAmountTextField" destination="QhU-CE-SRK" id="jv5-RX-B9N"/>
+                        <outlet property="deliPriceTextField" destination="cP6-N6-N5u" id="Hfa-EW-WD5"/>
+                        <outlet property="timeAmountSlider" destination="bhf-vD-MSQ" id="n3e-KH-H5N"/>
+                        <outlet property="timeAmountTextField" destination="lCi-UJ-90g" id="Wao-4l-Ygo"/>
+                        <outlet property="timePriceTextField" destination="pN0-Jy-wyo" id="Kii-cc-VT8"/>
+                        <segue destination="ep4-ZD-gdJ" kind="presentation" identifier="goResult" id="ab5-tA-krK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="ov9-r5-fZq">
+            <objects>
+                <viewController id="ep4-ZD-gdJ" customClass="ResultViewController" customModule="courierator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hHd-yx-wgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R40-Nr-u40">
+                                <rect key="frame" x="150" y="374" width="114" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.074509803920000006" green="0.1529411765" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ты заработаешь" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sab-vF-Cwj">
+                                <rect key="frame" x="142" y="287" width="130" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="6Z7-qg-R4M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.074509803920000006" green="0.1529411765" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хорошо работаешь" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUP-nl-zij">
+                                <rect key="frame" x="65" y="442" width="284" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="CJe-uW-mKO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.074509803920000006" green="0.1529411765" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuD-Zv-YkS">
+                                <rect key="frame" x="125" y="684" width="164" height="55"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.1529411765" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="QUY-nK-bel"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="ПЕРЕСЧИТАТЬ">
+                                    <color key="titleColor" red="0.84313725490000002" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recalculateTouch:" destination="ep4-ZD-gdJ" eventType="touchUpInside" id="yuo-11-l2w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GDs-X7-FAU"/>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.93725490199999995" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RUP-nl-zij" firstAttribute="top" secondItem="R40-Nr-u40" secondAttribute="bottom" constant="8" id="2f1-8o-zqR"/>
+                            <constraint firstItem="XuD-Zv-YkS" firstAttribute="centerX" secondItem="R40-Nr-u40" secondAttribute="centerX" id="CDw-hg-9A6"/>
+                            <constraint firstItem="RUP-nl-zij" firstAttribute="leading" secondItem="GDs-X7-FAU" secondAttribute="leading" constant="65" id="J7a-61-HUo"/>
+                            <constraint firstItem="sab-vF-Cwj" firstAttribute="top" secondItem="GDs-X7-FAU" secondAttribute="top" constant="287" id="LxK-mk-Mz9"/>
+                            <constraint firstItem="XuD-Zv-YkS" firstAttribute="centerX" secondItem="hHd-yx-wgZ" secondAttribute="centerX" id="S00-RP-lbA"/>
+                            <constraint firstItem="XuD-Zv-YkS" firstAttribute="centerX" secondItem="sab-vF-Cwj" secondAttribute="centerX" id="TkW-gG-nhB"/>
+                            <constraint firstItem="R40-Nr-u40" firstAttribute="top" secondItem="sab-vF-Cwj" secondAttribute="bottom" constant="19" id="Uf1-nM-IGK"/>
+                            <constraint firstItem="sab-vF-Cwj" firstAttribute="leading" secondItem="GDs-X7-FAU" secondAttribute="leading" constant="142" id="Ulw-Nf-ToS"/>
+                            <constraint firstItem="XuD-Zv-YkS" firstAttribute="leading" secondItem="GDs-X7-FAU" secondAttribute="leading" constant="125" id="fUN-2k-U4I"/>
+                            <constraint firstItem="XuD-Zv-YkS" firstAttribute="centerX" secondItem="RUP-nl-zij" secondAttribute="centerX" id="pXe-p8-O9w"/>
+                            <constraint firstItem="GDs-X7-FAU" firstAttribute="bottom" secondItem="XuD-Zv-YkS" secondAttribute="bottom" constant="69" id="s75-cV-9HG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="RUP-nl-zij" id="iOo-0z-Hg7"/>
+                        <outlet property="resultLabel" destination="R40-Nr-u40" id="zDh-Ex-hbg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GeN-73-0il" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934.78260869565224" y="93.75"/>
+        </scene>
+    </scenes>
+</document>
